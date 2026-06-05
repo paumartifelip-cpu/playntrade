@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Hover sounds for interactive gaming widgets/buttons
-  const hoverElements = document.querySelectorAll('.btn-cyber, .btn-youtube, .pricing-card, .battle-card, .audio-controller');
+  const hoverElements = document.querySelectorAll('.btn-cyber, .btn-youtube, .pricing-card, .battle-card, .audio-controller, .solution-banner');
   hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
       playSound('click');
