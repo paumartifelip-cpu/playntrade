@@ -136,134 +136,239 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 2. SCROLL EVENTS & INTERSECTION OBSERVER
+  // 2. DYNAMIC PROBLEMS SCANNER FEED
   // ==========================================
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
-
-  const levelObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        
-        // Trigger small entry animations
-        const cardId = entry.target.id;
-        const levelNum = cardId.replace('level-', '');
-        
-        // Custom widget entries
-        if (levelNum === '1') {
-          animateL1Counter();
-        } else if (levelNum === '9') {
-          animateL9Map();
-        }
-      }
-    });
-  }, observerOptions);
-
-  // Observe all level cards
-  document.querySelectorAll('.level-card').forEach(card => {
-    levelObserver.observe(card);
-  });
-
-
-  // ==========================================
-  // 3. LEVEL SPECIFIC CONTROLLERS & ACTIONS
-  // ==========================================
-
-  // Level 1: Follower Counter Count-Up
-  let l1CounterAnimated = false;
-  function animateL1Counter() {
-    if (l1CounterAnimated) return;
-    l1CounterAnimated = true;
-    
-    const counterEl = document.getElementById('l1-counter');
-    let count = 0;
-    const target = 82800;
-    const duration = 1200; // ms
-    const startTime = performance.now();
-    
-    function update(timestamp) {
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing out quadratic
-      const easeVal = progress * (2 - progress);
-      const currentVal = Math.floor(easeVal * target);
-      
-      counterEl.innerText = currentVal.toLocaleString('es-ES');
-      
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        counterEl.innerText = target.toLocaleString('es-ES');
-      }
+  const problems = [
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "▲",
+      title: "Muchos seguidores, pocas ventas",
+      desc: "82.000 seguidores no sirven de mucho si no entran clientes a la tienda."
+    },
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "●",
+      title: "Clientes que preguntan y desaparecen",
+      desc: "Piden precio, preguntan stock y nunca compran."
+    },
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "✖",
+      title: "Baja recompra",
+      desc: "Muchos clientes compran una vez al año cuando sale un juego importante."
+    },
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "■",
+      title: "Ticket medio bajo",
+      desc: "Compran un juego pero no accesorios, garantías o complementos."
+    },
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "▲",
+      title: "Pérdida de clientes hacia Amazon y tiendas digitales",
+      desc: "Steam, PlayStation Store, Xbox Store y Nintendo venden sin costes de tienda física."
+    },
+    {
+      cat: "ventas",
+      catName: "Ventas y clientes",
+      icon: "●",
+      title: "Falta de fidelización",
+      desc: "No existe una relación continua con el jugador."
+    },
+    {
+      cat: "operaciones",
+      catName: "Operaciones",
+      icon: "✖",
+      title: "Exceso de stock",
+      desc: "Productos que se quedan meses ocupando espacio."
+    },
+    {
+      cat: "operaciones",
+      catName: "Operaciones",
+      icon: "■",
+      title: "Falta de stock",
+      desc: "Justo cuando llega un lanzamiento importante."
+    },
+    {
+      cat: "operaciones",
+      catName: "Operaciones",
+      icon: "▲",
+      title: "Mala previsión de demanda",
+      desc: "No saber cuántas unidades pedir."
+    },
+    {
+      cat: "operaciones",
+      catName: "Operaciones",
+      icon: "●",
+      title: "Diferencias entre tiendas",
+      desc: "Una vende mucho un producto y otra no."
+    },
+    {
+      cat: "operaciones",
+      catName: "Operaciones",
+      icon: "✖",
+      title: "Procesos manuales",
+      desc: "Inventario, consultas y tareas administrativas consumen tiempo."
+    },
+    {
+      cat: "marketing",
+      catName: "Marketing",
+      icon: "■",
+      title: "Crear contenido constantemente",
+      desc: "Necesitan publicar todos los días."
+    },
+    {
+      cat: "marketing",
+      catName: "Marketing",
+      icon: "▲",
+      title: "No saber qué contenido genera ventas",
+      desc: "Muchos likes, pocas compras."
+    },
+    {
+      cat: "marketing",
+      catName: "Marketing",
+      icon: "●",
+      title: "No aprovechar los datos de los clientes",
+      desc: "Tienen información pero no la utilizan."
+    },
+    {
+      cat: "marketing",
+      catName: "Marketing",
+      icon: "✖",
+      title: "Campañas genéricas",
+      desc: "Todo el mundo recibe el mismo mensaje."
+    },
+    {
+      cat: "atencion",
+      catName: "Atención al cliente",
+      icon: "■",
+      title: "Miles de preguntas repetidas",
+      desc: "Disponibilidad, precios, horarios, reservas, preventas."
+    },
+    {
+      cat: "atencion",
+      catName: "Atención al cliente",
+      icon: "▲",
+      title: "Respuestas lentas",
+      desc: "El cliente se va a la competencia."
+    },
+    {
+      cat: "atencion",
+      catName: "Atención al cliente",
+      icon: "●",
+      title: "Experiencia distinta según el vendedor",
+      desc: "Cada empleado atiende de una forma diferente."
+    },
+    {
+      cat: "direccion",
+      catName: "Dirección y crecimiento",
+      icon: "✖",
+      title: "Tomar decisiones por intuición",
+      desc: "No disponer de análisis claros para decidir."
+    },
+    {
+      cat: "direccion",
+      catName: "Dirección y crecimiento",
+      icon: "■",
+      title: "No saber cómo aplicar IA realmente",
+      desc: "Todo el mundo habla de IA, pero pocos saben cómo generar ventas reales con ella."
     }
-    requestAnimationFrame(update);
-  }
-
-  // Level 5: Personalized Recommendations Selector
-  const l5Tabs = [
-    { id: 'l5-c1', name: 'PlayStation', offer: 'Recomendado: 15% Descuento en Mandos DualSense + PS Plus' },
-    { id: 'l5-c2', name: 'Nintendo', offer: 'Recomendado: Reserva Mario Wonders con Pegatinas Especiales' },
-    { id: 'l5-c3', name: 'PC', offer: 'Recomendado: 20% Dto en Teclados Mecánicos e Interruptores' },
-    { id: 'l5-c4', name: 'Xbox', offer: 'Recomendado: Canjea 3 Meses de Game Pass Ultimate' }
   ];
 
-  l5Tabs.forEach(tab => {
-    const el = document.getElementById(tab.id);
-    if (el) {
-      el.addEventListener('click', () => {
-        playSound('click');
-        // Clear all active
-        l5Tabs.forEach(t => document.getElementById(t.id).classList.remove('active-profile'));
-        // Activate current
-        el.classList.add('active-profile');
-        // Update labels
-        document.getElementById('l5-offer').innerText = `Filtro Activo: Oferta especial para fans de ${tab.name}`;
-      });
+  const problemsStream = document.getElementById('problems-stream');
+  const streamLoader = document.getElementById('stream-loader');
+  
+  let currentIndex = 0;
+  const batchSize = 3;
+  let isLoading = false;
+
+  function createProblemCard(problem) {
+    const card = document.createElement('div');
+    card.className = 'problem-card';
+    card.setAttribute('data-cat', problem.cat);
+    
+    card.innerHTML = `
+      <div class="problem-category">${problem.catName}</div>
+      <h3 class="problem-title">
+        <span class="ico">${problem.icon}</span>
+        ${problem.title}
+      </h3>
+      <p class="problem-desc">${problem.desc}</p>
+    `;
+    
+    return card;
+  }
+
+  function loadNextBatch() {
+    if (isLoading || currentIndex >= problems.length) return;
+    isLoading = true;
+    
+    if (streamLoader) {
+      streamLoader.style.opacity = '1';
     }
+    
+    setTimeout(() => {
+      const end = Math.min(currentIndex + batchSize, problems.length);
+      
+      // Play glitch sound for subsequent chunks
+      if (currentIndex > 0) {
+        playSound('glitch');
+      }
+
+      for (let i = currentIndex; i < end; i++) {
+        const problem = problems[i];
+        const card = createProblemCard(problem);
+        if (problemsStream) {
+          problemsStream.appendChild(card);
+        }
+        
+        // Trigger CSS transition
+        setTimeout(() => {
+          card.classList.add('animate-in');
+        }, (i - currentIndex) * 150);
+      }
+      
+      currentIndex = end;
+      isLoading = false;
+      
+      // Check if all problems are loaded
+      if (currentIndex >= problems.length) {
+        if (streamLoader) {
+          streamLoader.classList.add('completed');
+          const loaderTextEl = streamLoader.querySelector('.loader-text');
+          if (loaderTextEl) {
+            loaderTextEl.innerText = "ESCÁNER COMPLETADO // 20 PUNTOS CRÍTICOS IDENTIFICADOS";
+          }
+        }
+        playSound('levelup');
+        loaderObserver.unobserve(streamLoader);
+      }
+    }, 600);
+  }
+
+  const loaderObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !isLoading) {
+        loadNextBatch();
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '150px',
+    threshold: 0.1
   });
 
-  // Level 9: Map stores connection animation
-  function animateL9Map() {
-    // Add glowing lines dynamically to store locations if active
-    const mapContainer = document.querySelector('.l9-map-container');
-    const markers = document.querySelectorAll('.map-marker');
-    
-    // Connect markers with SVG paths on map if solution is active
-    const card = document.getElementById('level-9');
-    if (card.classList.contains('solution-active')) {
-      // Connect markers
-      let svg = mapContainer.querySelector('.l9-map-svg');
-      // Clear old connection lines if any
-      svg.querySelectorAll('.conn-line').forEach(l => l.remove());
-      
-      const positions = [
-        { x: '30%', y: '40%' },
-        { x: '45%', y: '50%' },
-        { x: '55%', y: '35%' },
-        { x: '70%', y: '60%' }
-      ];
-      
-      // Draw dynamic lines
-      for (let i = 0; i < positions.length - 1; i++) {
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('class', 'conn-line');
-        line.setAttribute('x1', parseFloat(positions[i].x) * 4 + '%');
-        line.setAttribute('y1', parseFloat(positions[i].y) * 1.8 + '%');
-        line.setAttribute('x2', parseFloat(positions[i+1].x) * 4 + '%');
-        line.setAttribute('y2', parseFloat(positions[i+1].y) * 1.8 + '%');
-        line.setAttribute('stroke', '#00ffd2');
-        line.setAttribute('stroke-width', '2px');
-        line.setAttribute('stroke-dasharray', '5 5');
-        line.setAttribute('style', 'animation: dash 1s linear infinite; opacity: 0.8;');
-        
-        svg.appendChild(line);
-      }
-    }
+  // Initial load
+  loadNextBatch();
+  
+  if (streamLoader) {
+    loaderObserver.observe(streamLoader);
   }
 
 
