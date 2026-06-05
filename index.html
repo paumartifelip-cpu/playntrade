@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Y si Play N Trade pudiera vender más sin contratar más personal? | IA en Retail</title>
+  <meta name="description" content="Descubre cómo las cadenas retail gamer optimizan stock, personalizan ofertas, automatizan atención al cliente y multiplican ventas usando Inteligencia Artificial.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Retro Sound Controller -->
+  <button class="audio-controller" id="audioToggle" aria-label="Toggle Sound Effects">
+    <svg class="audio-icon" viewBox="0 0 24 24" id="audioIcon" xmlns="http://www.w3.org/2000/svg">
+      <!-- Speaker Off (Muted) Icon Initially -->
+      <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+    </svg>
+    <span class="audio-text" id="audioText">SONIDO: OFF</span>
+  </button>
+
+  <!-- Navigation Header -->
+  <nav class="main-nav">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Play N Trade" class="logo-img">
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-tag">NUEVA MISIÓN: IA RETAIL</div>
+    <h1 class="hero-title">¿Y si Play N Trade pudiera vender más sin contratar más personal?</h1>
+    <p class="hero-subtitle">
+      Descubre cómo las cadenas retail más innovadoras están utilizando Inteligencia Artificial para aumentar ventas, mejorar la atención al cliente y tomar mejores decisiones.
+    </p>
+    <a href="#retos-start" class="btn-cyber" id="heroBtn">Ver los 10 retos</a>
+  </header>
+
+  <!-- Section Introduction Divider -->
+  <div class="intro-divider" id="retos-start">
+    <p class="intro-text">"Probablemente esto te resulta familiar..."</p>
+  </div>
+
+  <!-- Timeline / Levels Grid -->
+  <main class="container">
+    <section class="levels-timeline">
+
+      <!-- LEVEL 1 -->
+      <div class="level-card problem-active" id="level-1">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 01</div>
+          <div class="level-status-tag" id="tag-1">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <!-- Left Side: Problem -->
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 1</h2>
+            <p class="problem-desc">Miles de seguidores. Menos compradores de los que deberían existir en la tienda.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="level1-funnel">
+              <div class="l1-stat-box">
+                <span class="l1-number" id="l1-counter">82,800</span>
+                <div class="l1-label">Seguidores</div>
+              </div>
+              <div class="funnel-visual">
+                <div class="funnel-top"></div>
+                <div class="funnel-stream" id="l1-stream"></div>
+                <div class="funnel-bottom-dots" id="l1-dots">
+                  <div class="buyer-dot"></div>
+                </div>
+              </div>
+              <div class="l1-label" id="l1-funnel-label">Pocos compradores reales</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="1">Activar Solución IA</button>
+        </div>
+
+        <!-- Right Side: Solution -->
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Segmentación automática de clientes y campañas personalizadas hiper-dirigidas.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge" style="margin-bottom: 10px;">CAMPAÑAS ACTIVAS</div>
+              <p style="font-size: 13px; color: #fff; font-family: var(--font-gaming);">Fidelidad +42%</p>
+              <p style="font-size: 11px; margin-top: 5px;">Campañas automáticas enviadas a coleccionistas de juegos retro y fans de consolas específicas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 2 -->
+      <div class="level-card problem-active" id="level-2">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 02</div>
+          <div class="level-status-tag" id="tag-2">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 2</h2>
+            <p class="problem-desc">El equipo responde las mismas preguntas una y otra vez por redes y chat.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l2-floating-container" id="l2-container">
+              <div class="l2-bubble">¿Tienen PS5?</div>
+              <div class="l2-bubble">¿Cuánto cuesta?</div>
+              <div class="l2-bubble">¿Tienen stock?</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="2">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Asistentes inteligentes integrados para Instagram, WhatsApp y web.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div class="l2-bot-response">
+              <div class="bot-badge">RESPUESTA AUTOMÁTICA</div>
+              <div class="bot-chat-line">"¡Hola! Sí, tenemos stock del PS5 Slim en Multiplaza a $499. ¿Deseas reservarlo?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 3 -->
+      <div class="level-card problem-active" id="level-3">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 03</div>
+          <div class="level-status-tag" id="tag-3">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 3</h2>
+            <p class="problem-desc">No siempre sabemos qué producto o accesorio gamer será el próximo éxito en ventas.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l3-chart-container">
+              <div class="l3-trend-line"></div>
+              <div class="l3-bar l3-bar-1" style="--h: 30%; --lbl: 'Zelda';" data-label="Zelda"></div>
+              <div class="l3-bar l3-bar-2" style="--h: 55%; --lbl: 'Fifa';" data-label="Fifa"></div>
+              <div class="l3-bar l3-bar-3" style="--h: 40%; --lbl: 'Gamer Bag';" data-label="Gamer Bag"></div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="3">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Predicción de tendencias de mercado y análisis de demanda predictiva.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge" style="background: var(--color-cyan); color: #000; box-shadow: var(--shadow-cyan);">TENDENCIA PREVISTA</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Próximo Hit: VR Headsets (+85%)</p>
+              <p style="font-size: 11px; margin-top: 5px;">Sugerencia de abastecimiento automático en base a volumen de búsquedas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 4 -->
+      <div class="level-card problem-active" id="level-4">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 04</div>
+          <div class="level-status-tag" id="tag-4">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 4</h2>
+            <p class="problem-desc">Productos agotados (Quiebres de stock) justamente cuando más se necesitan.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l4-inventory-display">
+              <div class="l4-console-box">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 12c0-1.1-.9-2-2-2h-3V7c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v3H6c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-5zM9 12c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 4H9v-1h6v1zm0-3c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1z" />
+                </svg>
+              </div>
+              <div class="l4-badge-stock" id="l4-badge">OUT OF STOCK</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="4">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Predicción inteligente de inventario y reposición automatizada.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge">REPOSICIÓN SMART</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Lote automático enviado</p>
+              <p style="font-size: 11px; margin-top: 5px;">Reordenando 50 unidades antes de que termine el inventario actual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 5 -->
+      <div class="level-card problem-active" id="level-5">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 05</div>
+          <div class="level-status-tag" id="tag-5">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 5</h2>
+            <p class="problem-desc">Cada cliente es diferente, pero todos reciben la misma oferta genérica.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l5-platform-selector">
+              <div class="l5-cards-row">
+                <div class="l5-card active-profile" id="l5-c1">PlayStation</div>
+                <div class="l5-card" id="l5-c2">Nintendo</div>
+                <div class="l5-card" id="l5-c3">PC</div>
+                <div class="l5-card" id="l5-c4">Xbox</div>
+              </div>
+              <div class="l5-offer-banner" id="l5-offer">Oferta del mes: 10% de descuento general.</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="5">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Recomendaciones personalizadas basadas en comportamiento histórico.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge" style="background: var(--color-magenta); color: #fff; box-shadow: var(--shadow-magenta);">PERFIL RECONOCIDO</div>
+              <p style="font-size: 12px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);" id="l5-custom-rec">Oferta personalizada activa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 6 -->
+      <div class="level-card problem-active" id="level-6">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 06</div>
+          <div class="level-status-tag" id="tag-6">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 6</h2>
+            <p class="problem-desc">Crear contenido de valor para redes y blogs consume demasiado tiempo del equipo.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l6-grid-chaos">
+              <div class="l6-item">Post Redes</div>
+              <div class="l6-item">Blog draft</div>
+              <div class="l6-item">Ofertas img</div>
+              <div class="l6-item">TikTok Idea</div>
+              <div class="l6-item">Newsletter</div>
+              <div class="l6-item">Ads copy</div>
+              <div class="l6-loading-bar" id="l6-bar"></div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="6">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Generación automática de campañas de marketing y copies listos para publicar.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge">CREACIÓN COMPLETADA</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">6 Publicaciones Generadas</p>
+              <p style="font-size: 11px; margin-top: 5px;">Contenido listo para Instagram con copies y hashtags optimizados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 7 -->
+      <div class="level-card problem-active" id="level-7">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 07</div>
+          <div class="level-status-tag" id="tag-7">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 7</h2>
+            <p class="problem-desc">Muchos clientes compran una sola vez y desaparecen para siempre.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l7-door-visual">
+              <div class="l7-door">TIENDA</div>
+              <div class="l7-customer">👤</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="7">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Automatizaciones de fidelización y seguimiento post-venta inteligentes.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge">FIDELIZACIÓN IA</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Retención: +38%</p>
+              <p style="font-size: 11px; margin-top: 5px;">Secuencia automatizada enviada a las 3 semanas ofreciendo expansión/DLCs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 8 -->
+      <div class="level-card problem-active" id="level-8">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 08</div>
+          <div class="level-status-tag" id="tag-8">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 8</h2>
+            <p class="problem-desc">Los vendedores en tienda física no siempre tienen toda la información del cliente.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l8-hud-panel">
+              <div class="l8-hud-row"><span class="l8-hud-label">Cliente:</span> <span class="l8-hud-value">Desconocido</span></div>
+              <div class="l8-hud-row"><span class="l8-hud-label">Historial:</span> <span class="l8-hud-value">Ninguno</span></div>
+              <div class="l8-recommendation" id="l8-recommendation">Sin recomendaciones en pantalla</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="8">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Asistentes en tiempo real para vendedores con predicción de compras.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge">COPILOTO VENDEDOR</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Sugerencia: Ofrecer Mandos Pro</p>
+              <p style="font-size: 11px; margin-top: 5px;">El cliente compró una Switch la semana pasada. 80% probabilidad de interés.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 9 -->
+      <div class="level-card problem-active" id="level-9">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 09</div>
+          <div class="level-status-tag" id="tag-9">PROBLEMA DETECTADO</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 9</h2>
+            <p class="problem-desc">Es difícil saber en tiempo real qué está pasando entre las distintas tiendas de la cadena.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l9-map-container">
+              <!-- Inline SVG outline of Panama to avoid requests -->
+              <svg class="l9-map-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simple stylized layout representation of Panama -->
+                <path d="M 20,90 Q 60,60 100,100 T 180,90 T 260,110 T 340,80 T 380,100 L 380,120 Q 340,100 300,130 T 220,110 T 140,120 T 60,110 Z" />
+              </svg>
+              <!-- Glowing store locations -->
+              <div class="map-marker" style="top: 40%; left: 30%;" data-label="Albrook" id="m1"></div>
+              <div class="map-marker" style="top: 50%; left: 45%;" data-label="Multiplaza" id="m2"></div>
+              <div class="map-marker" style="top: 35%; left: 55%;" data-label="Altaplaza" id="m3"></div>
+              <div class="map-marker" style="top: 60%; left: 70%;" data-label="Town Center" id="m4"></div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="9">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Dashboards inteligentes centralizados que consolidan ventas de todas las tiendas.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge">CONEXIÓN TOTAL</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Panel de Panamá Activo</p>
+              <p style="font-size: 11px; margin-top: 5px;">Consolidando inventario y transferencias automáticas entre Albrook y Town Center.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 10 -->
+      <div class="level-card problem-active" id="level-10">
+        <div class="level-header">
+          <div class="level-badge">NIVEL 10</div>
+          <div class="level-status-tag" id="tag-10">ALERTA CRÍTICA</div>
+        </div>
+        
+        <div class="level-side-problem">
+          <div>
+            <h2 class="problem-title"><span class="ico">🎮</span> Problema 10</h2>
+            <p class="problem-desc">La competencia ya está utilizando IA para acelerar sus ventas y optimizar costes.</p>
+          </div>
+          
+          <div class="widget-area">
+            <div class="l10-game-over-container">
+              <div class="l10-text" id="l10-display">GAME OVER</div>
+            </div>
+          </div>
+          
+          <button class="btn-activate-solution" data-level="10">Activar Solución IA</button>
+        </div>
+
+        <div class="level-side-solution">
+          <div>
+            <h2 class="solution-title"><span class="ico">✨</span> Solución IA</h2>
+            <p class="solution-desc">Plan de adopción y transformación digital con Inteligencia Artificial.</p>
+          </div>
+          <div class="widget-area" style="background: rgba(57, 255, 20, 0.05);">
+            <div style="text-align: center; width: 100%;">
+              <div class="bot-badge" style="background: var(--color-yellow); color: #000; box-shadow: 0 0 15px rgba(254, 254, 0, 0.4);">READY PLAYER ONE</div>
+              <p style="font-size: 13px; color: #fff; margin-top: 10px; font-family: var(--font-gaming);">Hoja de ruta lista</p>
+              <p style="font-size: 11px; margin-top: 5px;">Plan en 3 fases: Automatizar soporte → Optimizar Stock → Predicciones de Demanda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BEFORE VS AFTER SECTION -->
+    <section class="transformation-section">
+      <div class="section-header">
+        <div class="hero-tag" style="display: inline-block;">COMPARATIVA DE BATALLA</div>
+        <h2 style="font-size: clamp(24px, 3vw, 36px); margin-top: 10px;">La Transformación Final</h2>
+      </div>
+
+      <div class="battle-container">
+        
+        <!-- Player 1: Antes -->
+        <div class="battle-card card-before">
+          <h3 class="battle-title"><span>❌</span> ANTES</h3>
+          <ul class="battle-list">
+            <li class="battle-item">
+              <span style="font-size: 20px;">🤯</span>
+              <div>
+                <strong>Más trabajo</strong>
+                <p style="font-size: 12px; margin-top: 2px;">El equipo se satura de tareas manuales repetitivas.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">💬</span>
+              <div>
+                <strong>Consultas repetidas</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Mismos chats de stock y precios una y otra vez.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">⏳</span>
+              <div>
+                <strong>Menos tiempo</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Poco tiempo para atender ventas de alto valor.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">🎲</span>
+              <div>
+                <strong>Decisiones por intuición</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Abastecimiento a ciegas sin datos reales.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- VS Banner -->
+        <div class="battle-vs">VS</div>
+
+        <!-- Player 2: Después -->
+        <div class="battle-card card-after">
+          <h3 class="battle-title"><span>✅</span> DESPUÉS</h3>
+          <ul class="battle-list">
+            <li class="battle-item">
+              <span style="font-size: 20px;">🚀</span>
+              <div>
+                <strong>Más ventas</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Campañas dirigidas automáticas y ofertas óptimas.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">🤖</span>
+              <div>
+                <strong>Más automatización</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Asistentes inteligentes responden al instante 24/7.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">❤️</span>
+              <div>
+                <strong>Clientes satisfechos</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Atención rápida y recomendaciones a su gusto.</p>
+              </div>
+            </li>
+            <li class="battle-item">
+              <span style="font-size: 20px;">📊</span>
+              <div>
+                <strong>Decisiones por datos</strong>
+                <p style="font-size: 12px; margin-top: 2px;">Predicciones automáticas de stock y tendencias.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SPEAKER BIO SECTION -->
+    <section class="speaker-section">
+      <div class="section-header">
+        <div class="hero-tag" style="display: inline-block;">EL PONENTE</div>
+        <h2 style="font-size: clamp(24px, 3vw, 36px); margin-top: 10px;">Acerca de Pau Martí Felip</h2>
+      </div>
+      
+      <div class="speaker-card">
+        <!-- SVG Character Avatar slot instead of a photo -->
+        <div class="speaker-avatar-container">
+          <svg class="speaker-avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-cyan)" stroke-width="2" stroke-dasharray="3 3"/>
+            <circle cx="50" cy="50" r="40" fill="rgba(0, 255, 210, 0.05)" stroke="var(--color-cyan)" stroke-width="1"/>
+            <rect x="36" y="38" width="12" height="8" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+            <rect x="52" y="38" width="12" height="8" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+            <line x1="48" y1="42" x2="52" y2="42" stroke="#fff" stroke-width="2"/>
+            <path d="M 30,75 C 30,60 38,55 50,55 C 62,55 70,60 70,75 Z" fill="rgba(0, 255, 210, 0.25)" stroke="var(--color-cyan)" stroke-width="2"/>
+            <circle cx="50" cy="38" r="10" fill="var(--bg-secondary)" stroke="var(--color-cyan)" stroke-width="2"/>
+            <circle cx="20" cy="30" r="3" fill="var(--color-cyan)" />
+            <circle cx="80" cy="30" r="3" fill="var(--color-magenta)" />
+            <line x1="20" y1="30" x2="35" y2="35" stroke="rgba(0, 255, 210, 0.3)" stroke-width="1"/>
+            <line x1="80" y1="30" x2="65" y2="35" stroke="rgba(255, 0, 85, 0.3)" stroke-width="1"/>
+          </svg>
+          <div class="speaker-level">LVL 99 IA</div>
+        </div>
+        
+        <div class="speaker-info">
+          <h3>Pau Martí Felip</h3>
+          <p class="speaker-subtitle">Profesor y divulgador de Inteligencia Artificial</p>
+          
+          <ul class="speaker-bio-list">
+            <li><strong>🌍 Nómada Digital:</strong> Viaja por el mundo intercambiando formación práctica en IA por alojamiento en casas, hostales y hoteles.</li>
+            <li><strong>🎓 Mentor de Éxito:</strong> Ha formado a miles de profesionales en Europa y Latinoamérica, ayudándoles a automatizar procesos y generar ingresos.</li>
+            <li><strong>⚡ Método Experiencial:</strong> Sesiones cargadas de ejemplos reales y experimentos en vivo, sin tecnicismos complejos para que cualquiera lo aplique mañana.</li>
+            <li><strong>📺 Divulgador Destacado:</strong> Su labor de adopción digital ha sido destacada en múltiples medios de comunicación de España y Latinoamérica.</li>
+          </ul>
+          <a href="https://www.youtube.com/@paumartifelip" target="_blank" class="btn-youtube">
+            <svg class="yt-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Ver Canal de YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL SCREEN / CALL TO ACTION -->
+    <section class="final-cta">
+      <div class="mission-badge">MISSION UNLOCKED</div>
+      <h2 class="final-title">Cómo utilizar la IA para transformar el retail gamer</h2>
+      
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-title">FORMATO</div>
+          <div class="info-card-value">Conferencia virtual</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">DURACIÓN</div>
+          <div class="info-card-value">90 Minutos</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">PONENTE</div>
+          <div class="info-card-value">Pau Martí Felip</div>
+        </div>
+      </div>
+
+      <p style="max-width: 600px; color: var(--color-text-dim); margin-bottom: 40px; font-size: 15px; text-align: center; line-height: 1.6;">
+        Profesor y divulgador de Inteligencia Artificial. Aprende a aplicar estas estrategias a tu cadena de tiendas y empieza a optimizar hoy mismo.
+      </p>
+
+      <button class="btn-cyber" style="border-right-color: var(--color-green); font-size: 18px;" id="ctaBtn">Iniciar la partida</button>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2026 Play N Trade Retail AI Mission. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
