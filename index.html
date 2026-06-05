@@ -9,7 +9,19 @@
 </head>
 <body>
 
-  <!-- Retro Sound Controller -->
+  <!-- Floating PlayStation Shapes in Background -->
+  <div class="ps-shapes-bg">
+    <div class="ps-shape ps-triangle">▲</div>
+    <div class="ps-shape ps-circle">●</div>
+    <div class="ps-shape ps-cross">✖</div>
+    <div class="ps-shape ps-square">■</div>
+    <div class="ps-shape ps-triangle-2">▲</div>
+    <div class="ps-shape ps-circle-2">●</div>
+    <div class="ps-shape ps-cross-2">✖</div>
+    <div class="ps-shape ps-square-2">■</div>
+  </div>
+
+  <!-- Audio Controller Widget -->
   <button class="audio-controller" id="audioToggle" aria-label="Toggle Sound Effects">
     <svg class="audio-icon" viewBox="0 0 24 24" id="audioIcon" xmlns="http://www.w3.org/2000/svg">
       <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
@@ -26,9 +38,20 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-tag">SYS_STATUS: READY // MISSION_IA</div>
-    <h1 class="hero-title">¿Y si Play N Trade pudiera vender más sin contratar más personal?</h1>
+    <div class="hero-brand-container">
+      <!-- PlayStation Style Vertical aligned symbols -->
+      <div class="ps-symbols-col">
+        <span>▲</span>
+        <span>●</span>
+        <span>✖</span>
+        <span>■</span>
+      </div>
+      <div class="hero-text-block">
+        <div class="hero-tag">DAYS OF RETAIL IA</div>
+        <h1 class="hero-title">¿Y si Play N Trade pudiera vender más sin contratar más personal?</h1>
+      </div>
+    </div>
+    
     <p class="hero-subtitle">
       Descubre cómo las cadenas retail más innovadoras están utilizando Inteligencia Artificial para aumentar ventas, mejorar la atención al cliente y tomar mejores decisiones.
     </p>
@@ -37,7 +60,7 @@
 
   <!-- Section Introduction Divider -->
   <div class="intro-divider" id="retos-start">
-    <p class="intro-text">[ DIAGNÓSTICO RETROALIMENTADO ]<br>"Probablemente esto te resulta familiar..."</p>
+    <p class="intro-text">"Probablemente esto te resulta familiar..."</p>
   </div>
 
   <!-- Timeline / Levels Grid -->
@@ -47,12 +70,12 @@
       <!-- LEVEL 1 -->
       <div class="level-card" id="level-1">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_01</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 01</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 1</h2>
+            <h2 class="problem-title"><span class="ico">▲</span> Problema 1</h2>
             <p class="problem-desc">Miles de seguidores. Menos compradores de los que deberían existir en la tienda.</p>
           </div>
           <div class="widget-area">
@@ -77,12 +100,12 @@
       <!-- LEVEL 2 -->
       <div class="level-card" id="level-2">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_02</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 02</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 2</h2>
+            <h2 class="problem-title"><span class="ico">●</span> Problema 2</h2>
             <p class="problem-desc">El equipo responde las mismas preguntas una y otra vez por redes y chat.</p>
           </div>
           <div class="widget-area">
@@ -98,12 +121,12 @@
       <!-- LEVEL 3 -->
       <div class="level-card" id="level-3">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_03</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 03</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 3</h2>
+            <h2 class="problem-title"><span class="ico">✖</span> Problema 3</h2>
             <p class="problem-desc">No siempre sabemos qué producto o accesorio gamer será el próximo éxito en ventas.</p>
           </div>
           <div class="widget-area">
@@ -120,12 +143,12 @@
       <!-- LEVEL 4 -->
       <div class="level-card" id="level-4">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_04</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 04</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 4</h2>
+            <h2 class="problem-title"><span class="ico">■</span> Problema 4</h2>
             <p class="problem-desc">Productos agotados (Quiebres de stock) justamente cuando más se necesitan.</p>
           </div>
           <div class="widget-area">
@@ -144,12 +167,12 @@
       <!-- LEVEL 5 -->
       <div class="level-card" id="level-5">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_05</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 05</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 5</h2>
+            <h2 class="problem-title"><span class="ico">▲</span> Problema 5</h2>
             <p class="problem-desc">Cada cliente es diferente, pero todos reciben la misma oferta genérica.</p>
           </div>
           <div class="widget-area">
@@ -169,12 +192,12 @@
       <!-- LEVEL 6 -->
       <div class="level-card" id="level-6">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_06</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 06</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 6</h2>
+            <h2 class="problem-title"><span class="ico">●</span> Problema 6</h2>
             <p class="problem-desc">Crear contenido de valor para redes y blogs consume demasiado tiempo del equipo.</p>
           </div>
           <div class="widget-area">
@@ -194,12 +217,12 @@
       <!-- LEVEL 7 -->
       <div class="level-card" id="level-7">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_07</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 07</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 7</h2>
+            <h2 class="problem-title"><span class="ico">✖</span> Problema 7</h2>
             <p class="problem-desc">Muchos clientes compran una sola vez y desaparecen para siempre.</p>
           </div>
           <div class="widget-area">
@@ -214,12 +237,12 @@
       <!-- LEVEL 8 -->
       <div class="level-card" id="level-8">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_08</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 08</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 8</h2>
+            <h2 class="problem-title"><span class="ico">■</span> Problema 8</h2>
             <p class="problem-desc">Los vendedores en tienda física no siempre tienen toda la información del cliente.</p>
           </div>
           <div class="widget-area">
@@ -235,12 +258,12 @@
       <!-- LEVEL 9 -->
       <div class="level-card" id="level-9">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_09</div>
-          <div class="level-status-tag">PROBLEMA DETECTADO</div>
+          <div class="level-badge">RETO 09</div>
+          <div class="level-status-tag">PROBLEMA ACTIVO</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 9</h2>
+            <h2 class="problem-title"><span class="ico">▲</span> Problema 9</h2>
             <p class="problem-desc">Es difícil saber en tiempo real qué está pasando entre las distintas tiendas de la cadena.</p>
           </div>
           <div class="widget-area">
@@ -260,12 +283,12 @@
       <!-- LEVEL 10 -->
       <div class="level-card" id="level-10">
         <div class="level-header">
-          <div class="level-badge">SYS_LVL_10</div>
+          <div class="level-badge">RETO 10</div>
           <div class="level-status-tag">ALERTA CRÍTICA</div>
         </div>
         <div class="level-side-problem">
           <div>
-            <h2 class="problem-title"><span class="ico">🎮</span> Problema 10</h2>
+            <h2 class="problem-title"><span class="ico">●</span> Problema 10</h2>
             <p class="problem-desc">La competencia ya está utilizando IA para acelerar sus ventas y optimizar costes.</p>
           </div>
           <div class="widget-area">
@@ -281,15 +304,15 @@
     <!-- BEFORE VS AFTER SECTION -->
     <section class="transformation-section">
       <div class="section-header">
-        <div class="hero-tag" style="display: inline-block;">SYS_BATTLE_LOG</div>
-        <h2 style="font-size: clamp(28px, 4vw, 44px); margin-top: 10px;">La Transformación Final</h2>
+        <div class="hero-tag" style="display: inline-block;">TRANSFORMACIÓN</div>
+        <h2 style="font-size: clamp(28px, 4vw, 44px); margin-top: 10px;">La Comparativa de Rendimiento</h2>
       </div>
 
       <div class="battle-container">
         
         <!-- Player 1: Antes -->
         <div class="battle-card card-before">
-          <h3 class="battle-title"><span>❌</span> ANTES</h3>
+          <h3 class="battle-title"><span>✕</span> ANTES</h3>
           <ul class="battle-list">
             <li class="battle-item">
               <span style="font-size: 24px;">🤯</span>
@@ -327,7 +350,7 @@
 
         <!-- Player 2: Después -->
         <div class="battle-card card-after">
-          <h3 class="battle-title"><span>✅</span> DESPUÉS</h3>
+          <h3 class="battle-title"><span>✓</span> DESPUÉS</h3>
           <ul class="battle-list">
             <li class="battle-item">
               <span style="font-size: 24px;">🚀</span>
@@ -366,13 +389,12 @@
     <!-- SPEAKER BIO SECTION -->
     <section class="speaker-section">
       <div class="section-header">
-        <div class="hero-tag" style="display: inline-block;">COACH_PROFILE</div>
+        <div class="hero-tag" style="display: inline-block;">PONENTE</div>
         <h2 style="font-size: clamp(28px, 4vw, 44px); margin-top: 10px;">Acerca de Pau Martí Felip</h2>
       </div>
       
       <div class="speaker-card">
         <div class="speaker-avatar-container">
-          <div class="hud-target-ring"></div>
           <img src="playntradepau.jpg" alt="Pau Martí Felip" class="speaker-img">
           <div class="speaker-level">LVL 99 IA</div>
         </div>
@@ -399,7 +421,7 @@
 
     <!-- FINAL SCREEN / CALL TO ACTION -->
     <section class="final-cta">
-      <div class="mission-badge">MISSION UNLOCKED</div>
+      <div class="mission-badge">CONFERENCIA EXCLUSIVA</div>
       <h2 class="final-title">Cómo utilizar la IA para transformar el retail gamer</h2>
       
       <div class="info-cards">
@@ -417,11 +439,11 @@
         </div>
       </div>
 
-      <p style="max-width: 750px; color: #f8fafc; margin-bottom: 45px; font-size: 18px; text-align: center; line-height: 1.8;">
+      <p style="max-width: 750px; color: #ffffff; margin-bottom: 45px; font-size: 18px; text-align: center; line-height: 1.8;">
         Profesor y divulgador de Inteligencia Artificial. Aprende a aplicar estas estrategias a tu cadena de tiendas y empieza a optimizar hoy mismo.
       </p>
 
-      <button class="btn-cyber" style="border-right-color: var(--color-green); font-size: 20px; padding: 20px 50px;" id="ctaBtn">Iniciar la partida</button>
+      <button class="btn-cyber" id="ctaBtn">Iniciar la partida</button>
     </section>
   </main>
 

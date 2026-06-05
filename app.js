@@ -223,13 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('active-profile');
         // Update labels
         document.getElementById('l5-offer').innerText = `Filtro Activo: Oferta especial para fans de ${tab.name}`;
-        
-        const card = document.getElementById('level-5');
-        if (card.classList.contains('solution-active')) {
-          document.getElementById('l5-custom-rec').innerText = tab.offer;
-        } else {
-          document.getElementById('l5-custom-rec').innerText = "Oferta personalizada oculta. ¡Activa la IA!";
-        }
       });
     }
   });
