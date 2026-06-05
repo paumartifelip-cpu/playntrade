@@ -289,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
     card.setAttribute('data-cat', problem.cat);
     
     card.innerHTML = `
-      <div class="problem-category">${problem.catName}</div>
       <h3 class="problem-title">
         <span class="ico">${problem.icon}</span>
         ${problem.title}
