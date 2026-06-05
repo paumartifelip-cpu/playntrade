@@ -382,10 +382,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const ctaBtn = document.getElementById('ctaBtn');
-  ctaBtn.addEventListener('click', () => {
-    playSound('coin');
-    // Open a prompt message or register alert to start
-    alert('🎮 ¡PARTIDA INICIADA! Reservando tu espacio en la conferencia virtual con Pau Martí Felip...');
-  });
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', () => {
+      playSound('coin');
+    });
+  }
 
 });
