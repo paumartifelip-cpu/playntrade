@@ -282,11 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const problemsStream = document.getElementById('problems-stream');
-  const streamLoader = document.getElementById('stream-loader');
-  
-  let currentIndex = 0;
-  const batchSize = 3;
-  let isLoading = false;
 
   function createProblemCard(problem) {
     const card = document.createElement('div');
@@ -305,71 +300,33 @@ document.addEventListener('DOMContentLoaded', () => {
     return card;
   }
 
-  function loadNextBatch() {
-    if (isLoading || currentIndex >= problems.length) return;
-    isLoading = true;
-    
-    if (streamLoader) {
-      streamLoader.style.opacity = '1';
-    }
-    
-    setTimeout(() => {
-      const end = Math.min(currentIndex + batchSize, problems.length);
-      
-      // Play glitch sound for subsequent chunks
-      if (currentIndex > 0) {
-        playSound('glitch');
-      }
-
-      for (let i = currentIndex; i < end; i++) {
-        const problem = problems[i];
-        const card = createProblemCard(problem);
-        if (problemsStream) {
-          problemsStream.appendChild(card);
-        }
-        
-        // Trigger CSS transition
-        setTimeout(() => {
-          card.classList.add('animate-in');
-        }, (i - currentIndex) * 150);
-      }
-      
-      currentIndex = end;
-      isLoading = false;
-      
-      // Check if all problems are loaded
-      if (currentIndex >= problems.length) {
-        if (streamLoader) {
-          streamLoader.classList.add('completed');
-          const loaderTextEl = streamLoader.querySelector('.loader-text');
-          if (loaderTextEl) {
-            loaderTextEl.innerText = "ESCÁNER COMPLETADO // 20 PUNTOS CRÍTICOS IDENTIFICADOS";
-          }
-        }
-        playSound('levelup');
-        loaderObserver.unobserve(streamLoader);
-      }
-    }, 600);
+  // Generate all cards instantly
+  if (problemsStream) {
+    problems.forEach(problem => {
+      const card = createProblemCard(problem);
+      problemsStream.appendChild(card);
+    });
   }
 
-  const loaderObserver = new IntersectionObserver((entries) => {
+  // Observe each card to animate-in on scroll
+  const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !isLoading) {
-        loadNextBatch();
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        // Play click audio chime when card drops into view
+        playSound('click');
+        cardObserver.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    rootMargin: '150px',
+    rootMargin: '0px 0px -50px 0px',
     threshold: 0.1
   });
 
-  // Initial load
-  loadNextBatch();
-  
-  if (streamLoader) {
-    loaderObserver.observe(streamLoader);
-  }
+  document.querySelectorAll('.problem-card').forEach(card => {
+    cardObserver.observe(card);
+  });
 
 
   // ==========================================

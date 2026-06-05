@@ -529,58 +529,6 @@ p {
   margin: 0;
 }
 
-/* Scanner Loader */
-.stream-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 50px;
-  padding: 20px;
-  width: 100%;
-  max-width: 800px;
-  transition: all 0.5s ease;
-}
-
-.stream-loader.completed {
-  border: 1px dashed rgba(0, 240, 255, 0.3);
-  background: rgba(0, 240, 255, 0.03);
-  border-radius: 12px;
-  padding: 30px;
-}
-
-.loader-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  border-top-color: var(--color-cyan);
-  border-bottom-color: var(--color-magenta);
-  animation: spin 1.2s linear infinite;
-}
-
-.stream-loader.completed .loader-spinner {
-  display: none;
-}
-
-.loader-text {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--color-text-dim);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.stream-loader.completed .loader-text {
-  color: var(--color-cyan);
-  font-size: 14px;
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 
 /* ========================================= */
 /* COMPARATIVE BATTLE SECTION */
