@@ -334,9 +334,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   
   const heroBtn = document.getElementById('heroBtn');
-  heroBtn.addEventListener('click', (e) => {
-    playSound('coin');
-  });
+  if (heroBtn) {
+    heroBtn.addEventListener('click', (e) => {
+      playSound('coin');
+    });
+  }
 
   const ctaBtn = document.getElementById('ctaBtn');
   if (ctaBtn) {
@@ -344,5 +346,39 @@ document.addEventListener('DOMContentLoaded', () => {
       playSound('coin');
     });
   }
+
+  // Hover sounds for interactive gaming widgets/buttons
+  const hoverElements = document.querySelectorAll('.btn-cyber, .btn-youtube, .pricing-card, .battle-card, .audio-controller');
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      playSound('click');
+    });
+  });
+
+  // Scroll entry sounds for major landing page stages/sections
+  const sectionSoundObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const className = entry.target.className;
+        if (className.includes('transformation-section')) {
+          playSound('coin');
+        } else if (className.includes('speaker-section')) {
+          playSound('levelup');
+        } else if (className.includes('final-cta')) {
+          playSound('coin');
+        }
+        sectionSoundObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.1
+  });
+
+  const targetSections = document.querySelectorAll('.transformation-section, .speaker-section, .final-cta');
+  targetSections.forEach(sec => {
+    sectionSoundObserver.observe(sec);
+  });
 
 });
